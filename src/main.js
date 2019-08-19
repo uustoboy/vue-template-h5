@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
-
+import store from './store/index'
+import axios from 'axios';
 Vue.config.productionTip = false
 
 //引入hotcs.js转rem;
@@ -22,6 +22,11 @@ FastClick.prototype.onTouchEnd = function(event) {
   }
 };
 
+//处理title;
+Vue.use(require('vue-wechat-title'))
+
+//挂载axios插件的方法
+Vue.prototype.$ajax= axios
 
 new Vue({
   router,
