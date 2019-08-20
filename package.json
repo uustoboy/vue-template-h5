@@ -6,12 +6,14 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "analyz": "vue-cli-service build --mode analyz",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "axios": "^0.19.0",
     "core-js": "^2.6.5",
     "fastclick": "^1.0.6",
+    "js-cookie": "^2.2.1",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vue-wechat-title": "^2.0.5",
@@ -31,6 +33,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "webpack-bundle-analyzer": "^3.4.1"
   }
 }

@@ -25,8 +25,7 @@ FastClick.prototype.onTouchEnd = function(event) {
 //处理title;
 Vue.use(require('vue-wechat-title'))
 
-//挂载axios插件的方法
-Vue.prototype.$ajax= axios
+Vue.prototype.$src = process.env.VUE_APP_PUBLIC_PATH
 
 new Vue({
   router,

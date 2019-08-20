@@ -2,7 +2,7 @@ import * as types from "./mutations-type"
 import axios from 'axios'
 import {
     Get_Demo_URL,
-} from '@/api/index';
+} from '@/api/index'
 
 export default {
 	getDemoName(state){
