@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import Home from './views/Home.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -12,8 +12,9 @@ export default new Router({
       name: 'home',
       meta: {
 	      title: '首页'
-	   },
-      component: () => import('./views/Home.vue')
+	  },
+    component: Home
+      //component: () => import(/* webpackChunkName: "Home" */'./views/Home.vue')
     }
   ]
 })

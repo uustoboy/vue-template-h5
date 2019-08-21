@@ -5,8 +5,6 @@
     	{{demoName}}
     </div>
     <input type="text" v-model="changeName"/>
-    <div class="a">
-    </div>
   </div>
 </template>
 <script>
@@ -42,11 +40,8 @@ export default {
 }
 </script>
 <style lang="scss">
+$global-unit: rem;
 .home{
   @include tac;
-  //background: url($src + '/images/w1.png');
-}
-.a{
-   background: url('../assets/images/pc-bg.jpg') no-repeat 0 0;
 }
 </style>

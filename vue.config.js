@@ -5,9 +5,8 @@ const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV);
 //打包分析;
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-//复制文件插件;
-const CopyPlugin = require('copy-webpack-plugin')
-
+//压缩JS;
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const cdn = {
       css: [],
@@ -24,6 +23,7 @@ module.exports = {
     publicPath : IS_PROD ? "http://static8.baihe.com/xxxx/" : "/",
     // 输出文件目录
     outputDir: '../bh-plaza_source',
+    assetsDir: '',  // 相对于outputDir的静态资源(js、css、img、fonts)目录
     // eslint-loader 是否在保存的时候检查
     lintOnSave: false,
     filenameHashing: false,
@@ -43,7 +43,11 @@ module.exports = {
             }
         }
     },
+    // 在生产环境下为 Babel 和 TypeScript 使用 `thread-loader`
+    // 在多核机器下会默认开启。
+    parallel: require('os').cpus().length > 1,
     chainWebpack: config  => {
+
     	// 添加别名
         config.resolve.alias
           .set('vue$', 'vue/dist/vue.esm.js')
@@ -59,14 +63,93 @@ module.exports = {
               analyzerMode: 'static',
             }]);
         }
+
+        if(IS_PROD){
+            // html中添加cdn
+            config.plugin('html').tap(args => {
+              args[0].cdn = cdn
+              return args
+            })
+
+            // 压缩代码
+            config.optimization.minimize(true);
+            //分割代码
+            config.optimization.splitChunks({
+                 chunks: 'all'
+            })
+
+            // 移除 prefetch 插件
+            config.plugins.delete('prefetch')
+            // 移除 preload 插件
+            config.plugins.delete('preload');
+            // 修复HMR
+            config.resolve.symlinks(true);
+            //修复 Lazy loading routes Error
+            config.plugin('html').tap(args => {
+                args[0].chunksSortMode = 'none';
+                return args;
+            });
+
+            //压缩图片;
+            config.module
+                .rule("image-webpack-loader")
+                .test(/\.(gif|png|jpe?g|svg)$/i)
+                .use("file-loader")
+                .loader("image-webpack-loader")
+                .options({
+                    mozjpeg: {progressive: true, quality: 65},
+                    optipng: {enabled: false},
+                    pngquant: {quality: "65-90", speed: 4},
+                    gifsicle: {interlaced: false},
+                    webp: {quality: 75}
+                })
+                .tap(() => ({
+                  disable: IS_PROD
+                }))
+                .end();
+        }
         
     },
-    //configureWebpack: () => {},
+    configureWebpack: config => {
+
+        if(IS_PROD){
+            config.externals = {
+              vue: 'Vue',
+              'vue-router': 'VueRouter',
+              vuex: 'Vuex',
+              axios: 'axios'
+            }
+
+            // 为生产环境修改配置...
+            config.plugins.push(
+                //生产环境自动删除console
+                new UglifyJsPlugin({
+                    chunkFilter: chunk => {
+                        // Exclude uglification for the `vendor` chunk
+                        if (chunk.name === 'vendor') {
+                            return false;
+                        }
+                 
+                        return true;
+                    },
+                    uglifyOptions: {
+                        compress: {
+                            //warnings: false,
+                            drop_debugger: true,
+                            drop_console: true,
+                        },
+                    },
+                    sourceMap: false,
+                    parallel: true,
+                })
+            );
+        }
+    },
     // vue-loader 配置项
 	// https://vue-loader.vuejs.org/en/options.html
 	//vueLoader: {},
 	// 生产环境是否生成 sourceMap 文件
- 	//productionSourceMap: false, // 生产环境的 source map
+ 	productionSourceMap: false, // 生产环境的 source map
  	// 是否启用dll
 	// See https://github.com/vuejs/vue-cli/blob/dev/docs/cli-service.md#dll-mode
 	//dll: false,
@@ -88,24 +171,16 @@ module.exports = {
         open: false,//项目启动时是否自动打开浏览器，我这里设置为false,不打开，true表示打开
         //before: app => {},
         // 设置代理
-        proxy: {
-            [process.env.VUE_APP_URL]: {//代理api
-                //target: "https://cpi.baihe.com/",//服务器api地址
-                changeOrigin: true,//是否跨域
-                //ws: true, // proxy websockets
-                pathRewrite:{
-                   ['^'+process.env.VUE_APP_URL]:''
-                },
-                secure: false
-            }
-        }
-    },
-    // 第三方插件配置
-	// pluginOptions: {
-	//   new CopyPlugin([
-	//       { from: 'source', to: 'dest' },
-	//       { from: 'other', to: 'public' },
-	//     ]),
-	// }
-
+        //proxy: {
+            // [process.env.VUE_APP_URL]: {//代理api
+            //     target: "https://",//服务器api地址
+            //     changeOrigin: true,//是否跨域
+            //     ws: true, // proxy websockets
+            //     pathRewrite:{
+            //        ['^'+process.env.VUE_APP_URL]:''
+            //     },
+            //     secure: false
+            // }
+        //}
+    }
 }
