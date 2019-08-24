@@ -11,18 +11,18 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const cdn = {
       css: [],
       js: [
-        '//static8.baihe.com/common/js/vue.min.js', 
+        '//static8.baihe.com/common/js/vue.min.js',
         '//static8.baihe.com/common/js/vuex.min.js',
         '//static8.baihe.com/common/js/vue-router.min.js',
         '//static8.baihe.com/common/js/axios.min.js'
-      ] 
+      ]
     };
 
 module.exports = {
     // 基本路径
-    publicPath : IS_PROD ? "http://static8.baihe.com/xxxx/" : "/",
+    publicPath : IS_PROD ? "http://static8.baihe.com/projectName/" : "/",
     // 输出文件目录
-    outputDir: '../bh-plaza_source',
+    outputDir: '../projectName',
     assetsDir: '',  // 相对于outputDir的静态资源(js、css、img、fonts)目录
     // eslint-loader 是否在保存的时候检查
     lintOnSave: false,
@@ -108,7 +108,7 @@ module.exports = {
                 }))
                 .end();
         }
-        
+
     },
     configureWebpack: config => {
 
@@ -129,7 +129,7 @@ module.exports = {
                         if (chunk.name === 'vendor') {
                             return false;
                         }
-                 
+
                         return true;
                     },
                     uglifyOptions: {
