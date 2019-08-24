@@ -46,7 +46,7 @@ module.exports = {
     // 在生产环境下为 Babel 和 TypeScript 使用 `thread-loader`
     // 在多核机器下会默认开启。
     parallel: require('os').cpus().length > 1,
-    chainWebpack: config  => {
+    chainWebpack: config => {
 
     	// 添加别名
         config.resolve.alias
@@ -54,7 +54,7 @@ module.exports = {
           .set('@', resolve('src'))
           .set('@assets', resolve('src/assets'))
           .set('@components', resolve('src/components'))
-          .set('@views', resolve('src/views'))
+          .set('@views', resolve('src/views'));
 
         // 打包分析
         if (process.env.IS_ANALY) {
@@ -79,7 +79,7 @@ module.exports = {
             })
 
             // 移除 prefetch 插件
-            config.plugins.delete('prefetch')
+            config.plugins.delete('prefetch');
             // 移除 preload 插件
             config.plugins.delete('preload');
             // 修复HMR
