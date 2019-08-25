@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store/index'
 import axios from 'axios';
+const IS_PROD = ["production", "prod"].includes(process.env.NODE_ENV);
 Vue.config.productionTip = false
 
 //引入hotcs.js转rem;
@@ -21,6 +22,11 @@ FastClick.prototype.onTouchEnd = function(event) {
     return false;
   }
 };
+
+if (!IS_PROD){
+  var VConsole = require('vconsole/dist/vconsole.min.js')
+  var vConsole = new VConsole()
+}
 
 //处理title;
 Vue.use(require('vue-wechat-title'))

@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     ...mapActions([
-      'getDemoName', 
+      'getDemoName',
     ]),
     ...mapMutations({
       setName: types.SET_DEMO
@@ -34,7 +34,7 @@ export default {
       set (val){
         this.setName(val)
       }
-      
+
     }
   }
 }
