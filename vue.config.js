@@ -153,6 +153,7 @@ module.exports = {
                             drop_debugger: true,
                             drop_console: true,
                         },
+                        mangle: false //ios10一下的兼容
                     },
                     sourceMap: false,
                     parallel: true,
