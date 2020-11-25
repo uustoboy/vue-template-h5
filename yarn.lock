@@ -1678,7 +1678,7 @@ aws4@^1.8.0:
 
 axios@^0.19.2:
   version "0.19.2"
-  resolved "http://r.cnpmjs.org/axios/download/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+  resolved "https://r.cnpmjs.org/axios/download/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
   integrity sha1-PqNsXYgY0NX4qKl6bTa4bNwAyyc=
   dependencies:
     follow-redirects "1.5.10"
@@ -1746,7 +1746,7 @@ base@^0.11.1:
 
 base_mixins@^1.0.7:
   version "1.0.7"
-  resolved "http://r.cnpmjs.org/base_mixins/download/base_mixins-1.0.7.tgz#ca1fa66b80fc92862855018c01ec4df2a871a1b3"
+  resolved "https://r.cnpmjs.org/base_mixins/download/base_mixins-1.0.7.tgz#ca1fa66b80fc92862855018c01ec4df2a871a1b3"
   integrity sha1-yh+ma4D8koYoVQGMAexN8qhxobM=
 
 batch@0.6.1:
@@ -2963,7 +2963,7 @@ debug@3.2.6, debug@^3.0.0, debug@^3.1.1, debug@^3.2.5:
 
 debug@=3.1.0:
   version "3.1.0"
-  resolved "http://r.cnpmjs.org/debug/download/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+  resolved "https://r.cnpmjs.org/debug/download/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
   integrity sha1-W7WgZyYotkFJVmuhaBnmFRjGcmE=
   dependencies:
     ms "2.0.0"
@@ -3788,7 +3788,7 @@ fast-levenshtein@~2.0.6:
 
 fastclick@^1.0.6:
   version "1.0.6"
-  resolved "http://r.cnpmjs.org/fastclick/download/fastclick-1.0.6.tgz#161625b27b1a5806405936bda9a2c1926d06be6a"
+  resolved "https://r.cnpmjs.org/fastclick/download/fastclick-1.0.6.tgz#161625b27b1a5806405936bda9a2c1926d06be6a"
   integrity sha1-FhYlsnsaWAZAWTa9qaLBkm0Gvmo=
 
 fastq@^1.6.0:
@@ -3974,7 +3974,7 @@ flush-write-stream@^1.0.0:
 
 follow-redirects@1.5.10:
   version "1.5.10"
-  resolved "http://r.cnpmjs.org/follow-redirects/download/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+  resolved "https://r.cnpmjs.org/follow-redirects/download/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
   integrity sha1-e3qfmuov3/NnhqlP9kPtB/T/Xio=
   dependencies:
     debug "=3.1.0"
@@ -4427,9 +4427,9 @@ hex-color-regex@^1.1.0:
   integrity sha1-TAb8y0YC/iYCs8k9+C1+fb8aio4=
 
 highlight.js@^9.6.0:
-  version "9.18.1"
-  resolved "https://registry.npm.taobao.org/highlight.js/download/highlight.js-9.18.1.tgz#ed21aa001fe6252bb10a3d76d47573c6539fe13c"
-  integrity sha1-7SGqAB/mJSuxCj121HVzxlOf4Tw=
+  version "9.18.5"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.18.5.tgz#d18a359867f378c138d6819edfc2a8acd5f29825"
+  integrity sha512-a5bFyofd/BHCX52/8i8uJkjr9DYwXIPnM/plwI6W7ezItLGqzt7X2G2nXuYSfsIJdkwwj/g9DG1LkcGJI/dDoA==
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
@@ -5182,7 +5182,7 @@ js-beautify@^1.6.12:
 
 js-cookie@^2.2.1:
   version "2.2.1"
-  resolved "http://r.cnpmjs.org/js-cookie/download/js-cookie-2.2.1.tgz#69e106dc5d5806894562902aa5baec3744e9b2b8"
+  resolved "https://r.cnpmjs.org/js-cookie/download/js-cookie-2.2.1.tgz#69e106dc5d5806894562902aa5baec3744e9b2b8"
   integrity sha1-aeEG3F1YBolFYpAqpbrsN0Tpsrg=
 
 js-message@1.0.5:
@@ -7831,7 +7831,7 @@ send@0.17.1:
 
 serialize-javascript@^1.7.0:
   version "1.9.1"
-  resolved "http://r.cnpmjs.org/serialize-javascript/download/serialize-javascript-1.9.1.tgz#cfc200aef77b600c47da9bb8149c943e798c2fdb"
+  resolved "https://r.cnpmjs.org/serialize-javascript/download/serialize-javascript-1.9.1.tgz#cfc200aef77b600c47da9bb8149c943e798c2fdb"
   integrity sha1-z8IArvd7YAxH2pu4FJyUPnmML9s=
 
 serialize-javascript@^2.1.2:
@@ -8767,7 +8767,7 @@ uglify-js@3.4.x:
 
 uglify-js@^3.6.0:
   version "3.8.1"
-  resolved "http://r.cnpmjs.org/uglify-js/download/uglify-js-3.8.1.tgz#43bb15ce6f545eaa0a64c49fd29375ea09fa0f93"
+  resolved "https://r.cnpmjs.org/uglify-js/download/uglify-js-3.8.1.tgz#43bb15ce6f545eaa0a64c49fd29375ea09fa0f93"
   integrity sha1-Q7sVzm9UXqoKZMSf0pN16gn6D5M=
   dependencies:
     commander "~2.20.3"
@@ -8775,7 +8775,7 @@ uglify-js@^3.6.0:
 
 uglifyjs-webpack-plugin@^2.2.0:
   version "2.2.0"
-  resolved "http://r.cnpmjs.org/uglifyjs-webpack-plugin/download/uglifyjs-webpack-plugin-2.2.0.tgz#e75bc80e7f1937f725954c9b4c5a1e967ea9d0d7"
+  resolved "https://r.cnpmjs.org/uglifyjs-webpack-plugin/download/uglifyjs-webpack-plugin-2.2.0.tgz#e75bc80e7f1937f725954c9b4c5a1e967ea9d0d7"
   integrity sha1-51vIDn8ZN/cllUybTFoeln6p0Nc=
   dependencies:
     cacache "^12.0.2"
@@ -8992,7 +8992,7 @@ vary@~1.1.2:
 
 vconsole@^3.3.4:
   version "3.3.4"
-  resolved "http://r.cnpmjs.org/vconsole/download/vconsole-3.3.4.tgz#a7dacd8887b3d3e902e8d18425cda56c34e77f51"
+  resolved "https://r.cnpmjs.org/vconsole/download/vconsole-3.3.4.tgz#a7dacd8887b3d3e902e8d18425cda56c34e77f51"
   integrity sha1-p9rNiIez0+kC6NGEJc2lbDTnf1E=
 
 vendors@^1.0.0:
@@ -9070,7 +9070,7 @@ vue-template-es2015-compiler@^1.9.0:
 
 vue-wechat-title@^2.0.5:
   version "2.0.5"
-  resolved "http://r.cnpmjs.org/vue-wechat-title/download/vue-wechat-title-2.0.5.tgz#628dd4bedca10ef39b9a98f67ca564a4db77260b"
+  resolved "https://r.cnpmjs.org/vue-wechat-title/download/vue-wechat-title-2.0.5.tgz#628dd4bedca10ef39b9a98f67ca564a4db77260b"
   integrity sha1-Yo3UvtyhDvObmpj2fKVkpNt3Jgs=
 
 vue@^2.6.11:
